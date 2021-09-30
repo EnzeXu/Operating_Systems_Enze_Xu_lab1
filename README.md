@@ -1,6 +1,6 @@
 CSC-641 - Lab 1 - EnzeXu
 ===========================
-This document is used to show the detailed description of each part in assignment1.
+This document is used to show the detailed description of each part in lab1.
 
 ****
  
@@ -12,38 +12,69 @@ This document is used to show the detailed description of each part in assignmen
 ****
 # Catalog
 
-* [1 Authentication Protocols in IoT](#1-authentication-protocols-in-iot)
-  * [1.1 Why is authentication so important in IoT](#11-why-is-authentication-so-important-in-iot)
-  * [1.2 IoT device authentication methods](#12-iot-device-authentication-methods)
-  * [1.3 IoT device authentication protocols](#13-iot-device-authentication-protocols)
-    * [1.3.1 Protocols](#131-protocols)
-      * [TLS](#1-tls)
-      * [HTTPS](#2-https)
-      * [SSH](#3-ssh)
-      * [IMAP](#4-imap)
-      * [3-D Secure](#5-3-d-secure)
-      * [RFID](#6-rfid)
-      * [BioAPI](#7-bioapi)
-    * [1.3.2 Protocol table](#132-protocol-table)
-* [2 Possible Attacks against Protocols](#2-possible-attacks-against-protocols)
-  * [2.1 Man-in-the-middle attack to the HTTPS protocol](#21-man-in-the-middle-attack-to-the-https-protocol)
-  * [2.2 Multiple attacks to the RFID protocol](#22-multiple-attacks-to-the-rfid-protocol)
-  * [2.3 Password recovery attack to the TLS protocol](#23-password-recovery-attack-to-the-tls-protocol)
-  * [2.4 Spoofing attack to the 3-D Secure protocol](#24-spoofing-attack-to-the-3-d-secure-protocol)
-  * [2.5 Hill-climbing attack to the BioAPI protocol](#25-hill-climbing-attack-to-the-bioapi-protocol)
-* [3 References](#3-references)
+* [1 Purpose of Lab](#1-purpose-of-lab)
+* [2 Compile & Execution Instructions](#2-compile--execution-instructions)
+* [3 Questions](#3-questions)
 
 ****
 
-
 # 1 Purpose of Lab
-Today, IoT applications span almost all sectors from medical to home automation and many more, carrying critical and sensitive data. There are different IoT device authentication methods, and each authentication method has its corresponding authentication protocols.
+Command line arguments
 
+When a C program is called, the arguments on the command line are made available to the main
+program as an argument count argc and an array of character strings argv containing the arguments.
+Manipulating these arguments is one of the most common uses of multiple levels of pointers (“pointer to
+pointer to ...''). By convention, argc is greater than zero; the first argument (in argv[0]) is the command
+name itself.
+
+Command line data structure
+
+The following figure shows the structure of the command line arguments when you type:
+
+% ./a.out Hello World
+
+
+Program guidelines
+
+Write a C program that will read a line from stdin, decodes the input, and creates a command line data
+structure.
+
+You must consider the following situations:
+
+- An empty line. The user hit the return key without having typed any input.
+- The program should terminate when the user types exit token in the command line.
+
+
+A sample execution would look like this:
+
+```shell
+%csc: ./prog1
+%enter data: ./a.out Hello World
+argv[0] ./a.out
+argv[1] Hello
+argv[2] World
+%enter data: this is my command
+argv[0] this
+argv[1] is
+argv[2] my
+argv[3] command
+%enter data: exit
+OK close shop and go home
+%csc:
+```
+
+****
 
 # 2 Compile & Execution Instructions
 ```shell
-cd 
+$ cd xxx/Operating_Systems_Enze_Xu_lab1
+$ cc Enze_Xu_lab1.c -o lab1
+$ ./lab1
+$ [Enjoy your time!]
 ```
 
+****
 
+# 3 Questions
+None for lab1
 
